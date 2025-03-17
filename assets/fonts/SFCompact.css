@@ -1,0 +1,99 @@
+@font-face {
+    font-family: SFCompactDisplayBlack;
+    src: url("/fonts/SFProCompact/SFCompactDisplay-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactDisplayBold;
+    src: url("/fonts/SFProCompact/SFCompactDisplay-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactDisplayHeavy;
+    src: url("/fonts/SFProCompact/SFCompactDisplay-Heavy.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactDisplayLight;
+    src: url("/fonts/SFProCompact/SFCompactDisplay-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactDisplayMedium;
+    src: url("/fonts/SFProCompact/SFCompactDisplay-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactDisplayRegular;
+    src: url("/fonts/SFProCompact/SFCompactDisplay-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactDisplaySemibold;
+    src: url("/fonts/SFProCompact/SFCompactDisplay-Semibold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactDisplayThin;
+    src: url("/fonts/SFProCompact/SFCompactDisplay-Thin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactDisplayUltralight;
+    src: url("/fonts/SFProCompact/SFCompactDisplay-Ultralight.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactTextBold;
+    src: url("/fonts/SFProCompact/SFCompactText-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactTextBoldItalic;
+    src: url("/fonts/SFProCompact/SFCompactText-BoldItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactTextHeavy;
+    src: url("/fonts/SFProCompact/SFCompactText-Heavy.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactTextHeavyItalic;
+    src: url("/fonts/SFProCompact/SFCompactText-HeavyItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactTextLight;
+    src: url("/fonts/SFProCompact/SFCompactText-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactTextLightItalic;
+    src: url("/fonts/SFProCompact/SFCompactText-LightItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactTextMedium;
+    src: url("/fonts/SFProCompact/SFCompactText-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactTextMediumItalic;
+    src: url("/fonts/SFProCompact/SFCompactText-MediumItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactTextRegular;
+    src: url("/fonts/SFProCompact/SFCompactText-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactTextRegularItalic;
+    src: url("/fonts/SFProCompact/SFCompactText-RegularItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFCompactTextSemibold;
+    src: url("/fonts/SFProCompact/SFCompactText-Semibold.otf") format("opentype");
+}

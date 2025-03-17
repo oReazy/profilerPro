@@ -1,0 +1,44 @@
+@font-face {
+    font-family: SFProRoundedBlack;
+    src: url("/fonts/SFProRounded/SF-Pro-Rounded-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProRoundedBold;
+    src: url("/fonts/SFProRounded/SF-Pro-Rounded-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProRoundedHeavy;
+    src: url("/fonts/SFProRounded/SF-Pro-Rounded-Heavy.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProRoundedLight;
+    src: url("/fonts/SFProRounded/SF-Pro-Rounded-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProRoundedMedium;
+    src: url("/fonts/SFProRounded/SF-Pro-Rounded-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProRoundedRegular;
+    src: url("/fonts/SFProRounded/SF-Pro-Rounded-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProRoundedSemibold;
+    src: url("/fonts/SFProRounded/SF-Pro-Rounded-Semibold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProRoundedThin;
+    src: url("/fonts/SFProRounded/SF-Pro-Rounded-Thin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProRoundedUltralight;
+    src: url("/fonts/SFProRounded/SF-Pro-Rounded-Ultralight.otf") format("opentype");
+}

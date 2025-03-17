@@ -1,0 +1,38 @@
+
+from idlelib.configdialog import font_sample_text
+
+# ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+import reflex as rx
+import json, ast, datetime, time
+
+from rxconfig import config
+
+# ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+import profiler.database as database
+from profiler.states.localStorage import Storage as LS
+
+# ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+import profiler.components.header as header
+import profiler.components.auth as auth
+import profiler.components.registration as registration
+
+# ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+@rx.page(route="/", title="«Profiler» — Главная страница")
+def index():
+    return rx.container(
+        rx.cond(
+            rx.State.is_hydrated,
+            rx.container(
+
+            ),
+            rx.center(
+                rx.spinner(),
+                height="100vh",  # Высота экрана
+            ),
+        ),
+
+    )

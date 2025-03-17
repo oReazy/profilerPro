@@ -1,0 +1,59 @@
+@font-face {
+    font-family: SFMonoBold;
+    src: url("/fonts/SFMono/SFMono-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFMonoBoldItalic;
+    src: url("/fonts/SFMono/SFMono-BoldItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFMonoHeavy;
+    src: url("/fonts/SFMono/SFMono-Heavy.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFMonoHeavyItalic;
+    src: url("/fonts/SFMono/SFMono-HeavyItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFMonoLight;
+    src: url("/fonts/SFMono/SFMono-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFMonoLightItalic;
+    src: url("/fonts/SFMono/SFMono-LightItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFMonoMedium;
+    src: url("/fonts/SFMono/SFMono-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFMonoMediumItalic;
+    src: url("/fonts/SFMono/SFMono-MediumItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFMonoRegular;
+    src: url("/fonts/SFMono/SFMono-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFMonoRegularItalic;
+    src: url("/fonts/SFMono/SFMono-RegularItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFMonoSemibold;
+    src: url("/fonts/SFMono/SFMono-Semibold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFMonoSemiboldItalic;
+    src: url("/fonts/SFMono/SFMono-SemiboldItalic.otf") format("opentype");
+}

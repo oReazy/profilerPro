@@ -1,0 +1,22 @@
+'name, surname, pages, description, portfolio, experienceJob, links, priority, icons, images, url, private, banReason, idAuthor, dateCreate, namePage',
+f"'', '', '', '[]', '', '[]', '[]', '[]', '[]', '[]', '[]', '[]', '0', '', '0', '0', '{self.tName}'"
+
+
+Я щас дам переменные и их значения, которые должны устанавливаться сделай запись в двойных кавычках "". Сами переменные будут в одинарных ''
+
+name = ''
+surname = ''
+pages = '[]'
+description = ''
+portfolio = '[]'
+experienceJob = '[]'
+links = '[]'
+priority = '[]'
+icons = '[]'
+images = '[]'
+url = '[]'
+private = '1'
+banReason = ''
+idAuthor = '0'
+dateCreate = '0'
+namePage = ''

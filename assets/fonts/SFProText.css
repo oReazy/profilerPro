@@ -1,0 +1,59 @@
+@font-face {
+    font-family: SFProTextBold;
+    src: url("/fonts/SFProText/SFProText-Bold.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProTextBoldItalic;
+    src: url("/fonts/SFProText/SFProText-BoldItalic.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProTextHeavy;
+    src: url("/fonts/SFProText/SFProText-Heavy.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProTextHeavyItalic;
+    src: url("/fonts/SFProText/SFProText-HeavyItalic.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProTextLight;
+    src: url("/fonts/SFProText/SFProText-Light.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProTextLightItalic;
+    src: url("/fonts/SFProText/SFProText-LightItalic.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProTextMedium;
+    src: url("/fonts/SFProText/SFProText-Medium.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProTextMediumItalic;
+    src: url("/fonts/SFProText/SFProText-MediumItalic.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProTextRegular;
+    src: url("/fonts/SFProText/SFProText-Regular.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProTextRegularItalic;
+    src: url("/fonts/SFProText/SFProText-RegularItalic.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProTextSemibold;
+    src: url("/fonts/SFProText/SFProText-Semibold.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProTextSemiboldItalic;
+    src: url("/fonts/SFProText/SFProText-SemiboldItalic.ttf") format("opentype");
+}
