@@ -113,7 +113,7 @@ def index():
                                                     on_change=[State.set_tAbout],
                                                     font_family='SFProDisplayBold',
                                                     placeholder='Расскажите о себе',
-                                                    height='97px'
+                                                    height='122px'
                                                 ),
                                                 direction='column',
                                                 margin_top='12px',
@@ -132,7 +132,7 @@ def index():
                                                         font_family='SFProDisplayBold',
                                                         width='100%'
                                                     ),
-                                                    rx.button(rx.icon('copy', size=20)),
+                                                    rx.button(rx.icon('copy', size=20), on_click=rx.set_clipboard(f"https//profiler.io/p/{State.tUrl}")),
                                                     direction='row',
                                                     spacing='2'
                                                 ),
@@ -146,7 +146,13 @@ def index():
                                             rx.flex(
                                                 rx.text('ВИДИМОСТЬ БЛОКОВ', font_family='SFMonoBold', size='2', color_scheme='gray', margin_bottom='8px'),
                                                 rx.flex(
-                                                    rx.text('Показывать блок "О себе"', font_family='SFProDisplayMedium', size='2'),
+                                                    rx.flex(
+                                                        rx.image('/images/pages/info.png', width='25px'),
+                                                        rx.text('Показывать блок "О себе"', font_family='SFProDisplayMedium', size='2'),
+                                                        direction='row',
+                                                        spacing='2',
+                                                        align='center',
+                                                    ),
                                                     rx.switch(default_checked=State.tVision1, on_change=State.set_tVision1),
                                                     align='center',
                                                     direction='row',
@@ -154,7 +160,13 @@ def index():
                                                 ),
                                                 rx.divider(),
                                                 rx.flex(
-                                                    rx.text('Показывать блок "Портфолио"', font_family='SFProDisplayMedium', size='2'),
+                                                    rx.flex(
+                                                        rx.image('/images/pages/portfolio.png', width='25px'),
+                                                        rx.text('Показывать блок "Портфолио"', font_family='SFProDisplayMedium', size='2'),
+                                                        direction='row',
+                                                        spacing='2',
+                                                        align='center',
+                                                    ),
                                                     rx.switch(default_checked=State.tVision2, on_change=State.set_tVision2),
                                                     align='center',
                                                     direction='row',
@@ -163,7 +175,13 @@ def index():
                                                 ),
                                                 rx.divider(),
                                                 rx.flex(
-                                                    rx.text('Показывать блок "Опыт работы"', font_family='SFProDisplayMedium', size='2'),
+                                                    rx.flex(
+                                                        rx.image('/images/pages/companys.png', width='25px'),
+                                                        rx.text('Показывать блок "Опыт работы"', font_family='SFProDisplayMedium', size='2'),
+                                                        direction='row',
+                                                        spacing='2',
+                                                        align='center',
+                                                    ),
                                                     rx.switch(default_checked=State.tVision3, on_change=State.set_tVision3),
                                                     align='center',
                                                     direction='row',
@@ -172,7 +190,13 @@ def index():
                                                 ),
                                                 rx.divider(),
                                                 rx.flex(
-                                                    rx.text('Показывать блок "Ссылки"', font_family='SFProDisplayMedium', size='2'),
+                                                    rx.flex(
+                                                        rx.image('/images/pages/links.png', width='25px'),
+                                                        rx.text('Показывать блок "Ссылки"', font_family='SFProDisplayMedium', size='2'),
+                                                        direction='row',
+                                                        spacing='2',
+                                                        align='center',
+                                                    ),
                                                     rx.switch(default_checked=State.tVision4, on_change=State.set_tVision4),
                                                     align='center',
                                                     direction='row',
@@ -181,7 +205,13 @@ def index():
                                                 ),
                                                 rx.divider(),
                                                 rx.flex(
-                                                    rx.text('Показывать блок "Меню"', font_family='SFProDisplayMedium', size='2'),
+                                                    rx.flex(
+                                                        rx.image('/images/pages/menu.png', width='25px'),
+                                                        rx.text('Показывать блок "Меню"', font_family='SFProDisplayMedium', size='2'),
+                                                        direction='row',
+                                                        spacing='2',
+                                                        align='center',
+                                                    ),
                                                     rx.switch(default_checked=State.tVision5, on_change=State.set_tVision5),
                                                     align='center',
                                                     direction='row',
