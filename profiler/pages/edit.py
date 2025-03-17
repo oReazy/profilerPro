@@ -20,6 +20,7 @@ import profiler.database as database
 from profiler.states.localStorage import Storage as LS
 
 import profiler.components.header as header
+import profiler.components.newPortfolioItem as newPortfolioItem
 import profiler.components.editName as editName
 from profiler.states.edit import State as State
 
@@ -245,6 +246,61 @@ def index():
                                         align='start',
                                         width='900px',
                                         margin_top='12px'
+                                    ),
+                                    rx.flex(
+                                        rx.card(
+                                            rx.flex(
+                                                rx.flex(
+                                                    rx.flex(
+                                                        rx.cond(
+                                                            State.tVision2,
+                                                            rx.image('/images/pages/portfolio.png', width='26px'),
+                                                            rx.image('/images/pages/portfolio_alt.png', width='26px'),
+                                                        ),
+                                                        rx.cond(
+                                                            State.tVision2,
+                                                            rx.text('Портфолио', font_family='SFProDisplayBold', size='2'),
+                                                            rx.text('Портфолио (скрыто)', font_family='SFProDisplayBold', size='2', color_scheme='gray'),
+                                                        ),
+                                                        align='center',
+                                                        spacing='2',
+                                                        direction='row'
+                                                    ),
+                                                    rx.flex(
+                                                        rx.cond(
+                                                            State.tVision2,
+                                                            rx.button('Изменить вид', font_family='SFProDisplayBold', size='1'),
+                                                            rx.button('Изменить вид', font_family='SFProDisplayBold', size='1', disabled=True),
+                                                        ),
+                                                        rx.cond(
+                                                            State.tVision2,
+                                                            newPortfolioItem.index(),
+                                                            rx.button('Добавить работу', font_family='SFProDisplayBold', size='1', disabled=True),
+                                                        ),
+                                                        direction='row',
+                                                        align='center',
+                                                        spacing='2'
+                                                    ),
+                                                    direction='row',
+                                                    spacing='2',
+                                                    justify='between',
+                                                    align='center'
+                                                ),
+                                                rx.divider(margin_bottom='8px'),
+                                                rx.flex(
+                                                    rx.text(State.tPortfolio),
+                                                    spacing='2'
+                                                ),
+                                                width='100%',
+                                                direction='column',
+                                                spacing='2',
+                                            ),
+                                            width='100%'
+                                        ),
+                                        spacing='2',
+                                        align='start',
+                                        width='900px',
+                                        margin_top='8px'
                                     ),
                                     value="tab1",
                                     margin_left='117px',
