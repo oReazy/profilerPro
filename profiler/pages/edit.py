@@ -63,7 +63,6 @@ def index():
                                 (State.tImages[0] == '/images/pages/avatar.png') | (State.tImages[0] == '/images/pages/avatar_alt.png'),
                                 rx.upload(rx.center(rx.image(State.tImages[0], width='140px', height='140px', border="4px solid #FFFFFF", border_radius='12px', on_mouse_enter=State.onMouseAvatar, on_mouse_leave=State.unMouseAvatar)), id="upload_wallpaper", max_files=1, max_size=10000000, accept={"image/png": [".png"], "image/jpeg": [".jpg", ".jpeg"]}, on_drop=State.handle_upload_avatar2(rx.upload_files(upload_id="upload_avatar")), padding='-40px', margin_left='137px', margin_right='857px', margin_top='-100px' , border='0px'),
                                 rx.upload(rx.center(rx.image(rx.get_upload_url(f'{State.tImages[0]}'), style=LS.style2, width='140px', height='140px', border="4px solid #FFFFFF", border_radius='12px', on_mouse_enter=State.onMouseAvatar, on_mouse_leave=State.unMouseAvatar)), id="upload_wallpaper", max_files=1, max_size=10000000, accept={"image/png": [".png"], "image/jpeg": [".jpg", ".jpeg"]}, on_drop=State.handle_upload_avatar2(rx.upload_files(upload_id="upload_avatar")), padding='-40px', margin_left='137px', margin_right='857px', margin_top='-100px' , border='0px'),
-
                             ),
                             rx.tabs.root(
                                 rx.tabs.list(
@@ -286,10 +285,31 @@ def index():
                                                     justify='between',
                                                     align='center'
                                                 ),
-                                                rx.divider(margin_bottom='8px'),
-                                                rx.flex(
-                                                    rx.text(State.tPortfolio),
-                                                    spacing='2'
+                                                rx.cond(
+                                                    State.tPortfolioCount != 0,
+                                                    rx.cond(
+                                                        State.tVision2,
+                                                        rx.foreach(
+                                                            State.tPortfolio, lambda item:
+                                                            rx.flex(
+                                                                rx.divider(),
+                                                                rx.flex(
+                                                                    newPortfolioItem.openItem(item),
+                                                                    rx.flex(
+                                                                        rx.button(rx.icon('trash-2', size=18), color_scheme='tomato', size='1', on_click=newPortfolioItem.newPortfolioItem.delete(item)),
+                                                                        direction='row',
+                                                                        spacing='2'
+                                                                    ),
+                                                                    spacing='2',
+                                                                    direction='row',
+                                                                    align='center',
+                                                                    justify='between'
+                                                                ),
+                                                                direction='column',
+                                                                spacing='2'
+                                                            )
+                                                        ),
+                                                    ),
                                                 ),
                                                 width='100%',
                                                 direction='column',

@@ -28,7 +28,8 @@ class State(LS):
     tVision4 = False
     tVision5 = False
     tPrivate = ''
-    tPortfolio = []
+    tPortfolio: list[list[str]]
+    tPortfolioCount = 0
 
     @rx.event
     async def handle_upload_wallpaper(self, files: list[rx.UploadFile]):
@@ -175,6 +176,7 @@ class State(LS):
                 self.tVision4 = VISION[3]
                 self.tVision5 = VISION[4]
                 self.tPortfolio = ast.literal_eval(PAGE[5])
+                self.tPortfolioCount = len(self.tPortfolio)
                 if int(PAGE[12]) == 1:
                     self.tPrivate = 'Закрыта'
                 else:

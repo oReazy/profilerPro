@@ -103,6 +103,23 @@ def index():
                                             ),
                                             ),
                                         ),
+                                    rx.flex(
+                                        rx.card(
+                                            width='282px'
+                                        ),
+                                        rx.card(
+                                            width='282px'
+                                        ),
+                                        rx.card(
+                                            width='282px'
+                                        ),
+                                        rx.card(
+                                            width='30px',
+                                        ),
+                                        margin_top='8px',
+                                        direction='row',
+                                        spacing='2'
+                                    ),
                                     value="tab1",
                                     width='900px',
                                     margin_left='117px',
