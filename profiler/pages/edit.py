@@ -113,7 +113,7 @@ def index():
                                                     on_change=[State.set_tAbout],
                                                     font_family='SFProDisplayBold',
                                                     placeholder='Расскажите о себе',
-                                                    height='122px'
+                                                    height='125px'
                                                 ),
                                                 direction='column',
                                                 margin_top='12px',
@@ -147,7 +147,7 @@ def index():
                                                 rx.text('ВИДИМОСТЬ БЛОКОВ', font_family='SFMonoBold', size='2', color_scheme='gray', margin_bottom='8px'),
                                                 rx.flex(
                                                     rx.flex(
-                                                        rx.image('/images/pages/info.png', width='25px'),
+                                                        rx.image('/images/pages/info.png', width='26px'),
                                                         rx.text('Показывать блок "О себе"', font_family='SFProDisplayMedium', size='2'),
                                                         direction='row',
                                                         spacing='2',
@@ -161,7 +161,7 @@ def index():
                                                 rx.divider(),
                                                 rx.flex(
                                                     rx.flex(
-                                                        rx.image('/images/pages/portfolio.png', width='25px'),
+                                                        rx.image('/images/pages/portfolio.png', width='26px'),
                                                         rx.text('Показывать блок "Портфолио"', font_family='SFProDisplayMedium', size='2'),
                                                         direction='row',
                                                         spacing='2',
@@ -176,7 +176,7 @@ def index():
                                                 rx.divider(),
                                                 rx.flex(
                                                     rx.flex(
-                                                        rx.image('/images/pages/companys.png', width='25px'),
+                                                        rx.image('/images/pages/companys.png', width='26px'),
                                                         rx.text('Показывать блок "Опыт работы"', font_family='SFProDisplayMedium', size='2'),
                                                         direction='row',
                                                         spacing='2',
@@ -191,7 +191,7 @@ def index():
                                                 rx.divider(),
                                                 rx.flex(
                                                     rx.flex(
-                                                        rx.image('/images/pages/links.png', width='25px'),
+                                                        rx.image('/images/pages/links.png', width='26px'),
                                                         rx.text('Показывать блок "Ссылки"', font_family='SFProDisplayMedium', size='2'),
                                                         direction='row',
                                                         spacing='2',
@@ -206,7 +206,7 @@ def index():
                                                 rx.divider(),
                                                 rx.flex(
                                                     rx.flex(
-                                                        rx.image('/images/pages/menu.png', width='25px'),
+                                                        rx.image('/images/pages/menu.png', width='26px'),
                                                         rx.text('Показывать блок "Меню"', font_family='SFProDisplayMedium', size='2'),
                                                         direction='row',
                                                         spacing='2',

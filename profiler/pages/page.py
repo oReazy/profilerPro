@@ -67,6 +67,7 @@ def index():
                                         rx.tabs.trigger("Главная", value="tab1", font_family='SFProDisplayBold'),
                                         margin_left='278px',
                                         margin_top='-52px',
+                                        margin_bottom='12px',
                                         width='740px'
                                     ),
                                 ),
@@ -90,11 +91,11 @@ def index():
                                                         ),
                                                         direction='row',
                                                         margin_left='5px',
-                                                        spacing='2'
+                                                        spacing='2',
                                                     ),
                                                     align='center',
                                                     width='700px',
-                                                    margin_top='12px'
+                                                    # margin_top='12px'
                                                 ),
                                                 rx.text(State.tAbout, font_family='SFProDisplayMedium'),
                                                 direction='column',
