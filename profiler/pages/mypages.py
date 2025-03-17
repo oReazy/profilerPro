@@ -53,36 +53,49 @@ def index():
                                            rx.foreach(line, lambda item:
                                                rx.menu.root(
                                                    rx.menu.trigger(
-                                                       rx.card(
-                                                           rx.flex(
-                                                               rx.icon('file-text', size=20),
+                                                       rx.link(
+                                                           rx.card(
                                                                rx.flex(
-                                                                   rx.text(item[16], font_family='SFProDisplayBold'),
+                                                                   rx.icon('file-text', size=20),
                                                                    rx.flex(
-                                                                       rx.icon('link', size=15, color=rx.color('gray', 8)),
-                                                                       rx.cond(
-                                                                           item[11] == '',
-                                                                           rx.text('Отсутствует', font_family='SFProDisplayBold', color_scheme='gray'),
-                                                                           rx.text(item[11], font_family='SFProDisplayBold', color_scheme='gray'),
+                                                                       rx.text(item[16], font_family='SFProDisplayBold'),
+                                                                       rx.flex(
+                                                                           rx.icon('link', size=15, color=rx.color('gray', 8)),
+                                                                           rx.cond(
+                                                                               item[11] == '',
+                                                                               rx.text('Отсутствует', font_family='SFProDisplayBold', color_scheme='gray'),
+                                                                               rx.text(item[11], font_family='SFProDisplayBold', color_scheme='gray'),
+                                                                           ),
+                                                                           direction='row',
+                                                                           spacing='1',
+                                                                           align='center'
                                                                        ),
-                                                                       direction='row',
-                                                                       spacing='1',
-                                                                       align='center'
+                                                                       direction='column',
+                                                                       aling='center',
                                                                    ),
-                                                                   direction='column',
-                                                                   aling='center',
+                                                                   direction='row',
+                                                                   align='center',
+                                                                   spacing='2'
                                                                ),
-                                                               direction='row',
-                                                               align='center',
-                                                               spacing='2'
+                                                               aling='center',
+                                                               width='100%',
                                                            ),
-                                                           aling='center',
-                                                           width='100%'
+                                                           width='100%',
+                                                           style=LS.style,
+                                                           href='#',
                                                        ),
                                                    ),
                                                    rx.menu.content(
-                                                       rx.menu.item("Просмотр страницы", on_click=rx.redirect(f'/page/{item[0]}')),
-                                                       rx.menu.item("Редактировать страницу", on_click=rx.redirect(f'/page/edit/{item[0]}')),
+                                                       rx.menu.item(rx.icon('eye', size=15), "Просмотр страницы", on_click=rx.redirect(f'/page/{item[0]}', is_external=True)),
+                                                       rx.menu.item(rx.icon('notebook-pen', size=15), "Редактировать страницу", on_click=rx.redirect(f'/page/edit/{item[0]}', is_external=True)),
+                                                       rx.cond(
+                                                           item[11] != '',
+                                                           rx.menu.separator()
+                                                       ),
+                                                       rx.cond(
+                                                           item[11] != '',
+                                                           rx.menu.item(rx.icon('copy', size=15), "Копировать ссылку", on_click=[rx.set_clipboard(f"https//profiler.io/p/{item[11]}"), rx.toast.info("Ссылка скопирована в буфер обмена")]),
+                                                       ),
                                                    ),
                                                ),
                                             ),

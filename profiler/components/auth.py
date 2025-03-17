@@ -83,7 +83,7 @@ def index(size):
             rx.flex(
                 rx.flex(
                     rx.flex(
-                        rx.image('/icons/icons8_add_user_male.svg', width='25px'),
+                        rx.image('/icons/icons8-key.svg', width='25px'),
                         rx.text('Авторизация', font_family='SFProDisplayBold', size='3'),
                         spacing='2',
                         direction='row',

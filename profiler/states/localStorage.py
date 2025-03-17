@@ -36,6 +36,7 @@ class Storage(rx.State):
     style = {"text-decoration": "none !important",  # Убираем подчёркивание
              "color": "inherit !important",  # Цвет наследуется от родителя
              "cursor": "hover",  # Убираем указатель на ссылке
+             "outline": 'none',
              }
     hover = {"color": "inherit !important",  # Цвет не меняется при наведении
              "text-decoration": "none !important",  # Подчёркивание не появляется

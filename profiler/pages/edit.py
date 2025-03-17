@@ -132,7 +132,7 @@ def index():
                                                         font_family='SFProDisplayBold',
                                                         width='100%'
                                                     ),
-                                                    rx.button(rx.icon('copy', size=20), on_click=rx.set_clipboard(f"https//profiler.io/p/{State.tUrl}")),
+                                                    rx.button(rx.icon('copy', size=20), on_click=[rx.set_clipboard(f"https//profiler.io/p/{State.tUrl}"), rx.toast.info("Ссылка скопирована в буфер обмена")]),
                                                     direction='row',
                                                     spacing='2'
                                                 ),

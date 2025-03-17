@@ -65,7 +65,7 @@ def index(size):
             rx.flex(
                 rx.flex(
                     rx.flex(
-                        rx.image('/icons/icons8_add_user_male.svg', width='25px'),
+                        rx.image('/icons/icons8-choose_page.svg', width='25px'),
                         rx.text('Создать страницу', font_family='SFProDisplayBold', size='3'),
                         spacing='2',
                         direction='row',
@@ -102,7 +102,7 @@ def index(size):
                 ),
                 rx.input(
                     rx.input.slot(
-                        rx.icon('user', size=17, color=rx.color('gray', 9))
+                        rx.icon('signature', size=17, color=rx.color('gray', 9))
                     ),
                     value=newpage.tName,
                     on_change=[newpage.set_tName, newpage.checkForm],
