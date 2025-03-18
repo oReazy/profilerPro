@@ -45,8 +45,6 @@ class State(LS):
 
 
 
-
-
     async def checkPageUrl(self):
         args = self.router.page.params['url']
         count = await database.getDataMultiCount('pages', 'url', f'"{args}"')

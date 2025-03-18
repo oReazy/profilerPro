@@ -112,11 +112,20 @@ def index():
                                                 rx.link(
                                                     rx.card(
                                                         rx.inset(
-                                                            rx.image(
-                                                                src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
-                                                                width="100%",
-                                                                height="120px",
-                                                                style=LS.style2
+                                                            rx.cond(
+                                                                (State.tPortfolio[0][4] == '/images/pages/portfolio120.png') | (State.tPortfolio[0][4] == '/images/pages/portfolio120_alt.png'),
+                                                                rx.image(
+                                                                    src=State.tPortfolio[0][4],
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
+                                                                rx.image(
+                                                                    src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
                                                             ),
                                                             side="top",
                                                             decoding='cover',
@@ -158,11 +167,20 @@ def index():
                                                 rx.link(
                                                     rx.card(
                                                         rx.inset(
-                                                            rx.image(
-                                                                src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
-                                                                width="100%",
-                                                                height="120px",
-                                                                style=LS.style2
+                                                            rx.cond(
+                                                                (State.tPortfolio[0][4] == '/images/pages/portfolio120.png') | (State.tPortfolio[0][4] == '/images/pages/portfolio120_alt.png'),
+                                                                rx.image(
+                                                                    src=State.tPortfolio[0][4],
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
+                                                                rx.image(
+                                                                    src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
                                                             ),
                                                             side="top",
                                                             decoding='cover',
@@ -193,11 +211,20 @@ def index():
                                                 rx.link(
                                                     rx.card(
                                                         rx.inset(
-                                                            rx.image(
-                                                                src=rx.get_upload_url(f'{State.tPortfolio[1][4]}'),
-                                                                width="100%",
-                                                                height="120px",
-                                                                style=LS.style2
+                                                            rx.cond(
+                                                                (State.tPortfolio[1][4] == '/images/pages/portfolio120.png') | (State.tPortfolio[1][4] == '/images/pages/portfolio120_alt.png'),
+                                                                rx.image(
+                                                                    src=State.tPortfolio[1][4],
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
+                                                                rx.image(
+                                                                    src=rx.get_upload_url(f'{State.tPortfolio[1][4]}'),
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
                                                             ),
                                                             side="top",
                                                             decoding='cover',
@@ -239,11 +266,20 @@ def index():
                                                 rx.link(
                                                     rx.card(
                                                         rx.inset(
-                                                            rx.image(
-                                                                src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
-                                                                width="100%",
-                                                                height="120px",
-                                                                style=LS.style2
+                                                            rx.cond(
+                                                                (State.tPortfolio[0][4] == '/images/pages/portfolio120.png') | (State.tPortfolio[0][4] == '/images/pages/portfolio120_alt.png'),
+                                                                rx.image(
+                                                                    src=State.tPortfolio[0][4],
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
+                                                                rx.image(
+                                                                    src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
                                                             ),
                                                             side="top",
                                                             decoding='cover',
@@ -274,11 +310,20 @@ def index():
                                                 rx.link(
                                                     rx.card(
                                                         rx.inset(
-                                                            rx.image(
-                                                                src=rx.get_upload_url(f'{State.tPortfolio[1][4]}'),
-                                                                width="100%",
-                                                                height="120px",
-                                                                style=LS.style2
+                                                            rx.cond(
+                                                                (State.tPortfolio[1][4] == '/images/pages/portfolio120.png') | (State.tPortfolio[1][4] == '/images/pages/portfolio120_alt.png'),
+                                                                rx.image(
+                                                                    src=State.tPortfolio[1][4],
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
+                                                                rx.image(
+                                                                    src=rx.get_upload_url(f'{State.tPortfolio[1][4]}'),
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
                                                             ),
                                                             side="top",
                                                             decoding='cover',
@@ -309,11 +354,20 @@ def index():
                                                 rx.link(
                                                     rx.card(
                                                         rx.inset(
-                                                            rx.image(
-                                                                src=rx.get_upload_url(f'{State.tPortfolio[2][4]}'),
-                                                                width="100%",
-                                                                height="120px",
-                                                                style=LS.style2
+                                                            rx.cond(
+                                                                (State.tPortfolio[2][4] == '/images/pages/portfolio120.png') | (State.tPortfolio[2][4] == '/images/pages/portfolio120_alt.png'),
+                                                                rx.image(
+                                                                    src=State.tPortfolio[2][4],
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
+                                                                rx.image(
+                                                                    src=rx.get_upload_url(f'{State.tPortfolio[2][4]}'),
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
                                                             ),
                                                             side="top",
                                                             decoding='cover',
@@ -355,11 +409,20 @@ def index():
                                                 rx.link(
                                                     rx.card(
                                                         rx.inset(
-                                                            rx.image(
-                                                                src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
-                                                                width="100%",
-                                                                height="120px",
-                                                                style=LS.style2
+                                                            rx.cond(
+                                                                (State.tPortfolio[0][4] == '/images/pages/portfolio120.png') | (State.tPortfolio[0][4] == '/images/pages/portfolio120_alt.png'),
+                                                                rx.image(
+                                                                    src=State.tPortfolio[0][4],
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
+                                                                rx.image(
+                                                                    src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
                                                             ),
                                                             side="top",
                                                             decoding='cover',
@@ -390,11 +453,20 @@ def index():
                                                 rx.link(
                                                     rx.card(
                                                         rx.inset(
-                                                            rx.image(
-                                                                src=rx.get_upload_url(f'{State.tPortfolio[1][4]}'),
-                                                                width="100%",
-                                                                height="120px",
-                                                                style=LS.style2
+                                                            rx.cond(
+                                                                (State.tPortfolio[1][4] == '/images/pages/portfolio120.png') | (State.tPortfolio[1][4] == '/images/pages/portfolio120_alt.png'),
+                                                                rx.image(
+                                                                    src=State.tPortfolio[0][4],
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
+                                                                rx.image(
+                                                                    src=rx.get_upload_url(f'{State.tPortfolio[1][4]}'),
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
                                                             ),
                                                             side="top",
                                                             decoding='cover',
@@ -425,11 +497,20 @@ def index():
                                                 rx.link(
                                                     rx.card(
                                                         rx.inset(
-                                                            rx.image(
-                                                                src=rx.get_upload_url(f'{State.tPortfolio[2][4]}'),
-                                                                width="100%",
-                                                                height="120px",
-                                                                style=LS.style2
+                                                            rx.cond(
+                                                                (State.tPortfolio[2][4] == '/images/pages/portfolio120.png') | (State.tPortfolio[2][4] == '/images/pages/portfolio120_alt.png'),
+                                                                rx.image(
+                                                                    src=State.tPortfolio[0][4],
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
+                                                                rx.image(
+                                                                    src=rx.get_upload_url(f'{State.tPortfolio[2][4]}'),
+                                                                    width="100%",
+                                                                    height="120px",
+                                                                    style=LS.style2
+                                                                ),
                                                             ),
                                                             side="top",
                                                             decoding='cover',

@@ -11,6 +11,7 @@ from rxconfig import config
 
 import profiler.database as database
 from profiler.states.localStorage import Storage as LS
+from profiler.states.edit import State as editor
 
 # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
@@ -38,6 +39,7 @@ class newPortfolioItem(LS):
         index = tPortfolio.index(item)
         tPortfolio.pop(index)
         await database.setData('pages', 'id', f"'{args}'", 'portfolio', f'\"{tPortfolio}\"')
+        return rx.redirect(f'/page/edit/{args}')
 
 
     async def onStart(self):
@@ -74,6 +76,7 @@ class newPortfolioItem(LS):
         tPortfolio = list(tPortfolio)
         tPortfolio[self.tIndex] = [self.tName, self.tTitle, self.tDescription, self.tLink, self.tImage]
         await database.setData('pages', 'id', f"'{args}'", 'portfolio', f'\"{tPortfolio}\"')
+        return rx.redirect(f'/page/edit/{args}')
 
     async def createItem(self):
         args = self.router.page.params['id']
@@ -82,6 +85,7 @@ class newPortfolioItem(LS):
         tPortfolio = list(tPortfolio)
         tPortfolio.append([self.tName, self.tTitle, self.tDescription, self.tLink, self.tImage])
         await database.setData('pages', 'id', f"'{args}'", 'portfolio', f'\"{tPortfolio}\"')
+        return rx.redirect(f'/page/edit/{args}')
 
 
 
@@ -229,7 +233,7 @@ def index():
                     rx.flex(),
                     rx.flex(
                         rx.button('Очистить данные', variant='surface', color_scheme='blue', on_click=newPortfolioItem.onStart),
-                        rx.button('Добавить', disabled=newPortfolioItem.tButtonDisable, on_click=newPortfolioItem.createItem),
+                        rx.dialog.close(rx.button('Добавить', disabled=newPortfolioItem.tButtonDisable, on_click=newPortfolioItem.createItem)),
                         direction='row',
                         align='center',
                         spacing='2'
