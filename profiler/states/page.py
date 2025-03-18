@@ -25,6 +25,28 @@ class State(LS):
     tVision: list[bool, bool, bool, bool, bool]
     tPrivate = 1
 
+    # --------------------------------------------------------
+
+    tPortfolio: list[list[str]]
+    tPortfolioCount = 0
+    tPortfolioColors = ['black', 'black', 'black', 'black', 'black']
+
+    # --------------------------------------------------------
+
+    async def onMousePortfolio(self, index):
+        self.tPortfolioColors[index] = 'blue'
+
+
+    async def unMousePortfolio(self, index):
+        self.tPortfolioColors[index] = 'black'
+
+
+
+
+
+
+
+
     async def checkPageUrl(self):
         args = self.router.page.params['url']
         count = await database.getDataMultiCount('pages', 'url', f'"{args}"')
@@ -38,6 +60,9 @@ class State(LS):
             self.tAbout = PAGE[4]
             self.tPrivate = PAGE[12]
             self.tVision = ast.literal_eval(PAGE[17])
+            self.tPortfolio = ast.literal_eval(PAGE[5])
+            self.tPortfolioCount = len(self.tPortfolio)
+            self.tPortfolioColors = ['black', 'black', 'black', 'black', 'black']
 
             if self.tPrivate == 1:
                 self.tErrorVisible = True
@@ -67,7 +92,8 @@ class State(LS):
             self.tAbout = PAGE[4]
             self.tPrivate = PAGE[12]
             self.tVision = ast.literal_eval(PAGE[17])
-
+            self.tPortfolio = ast.literal_eval(PAGE[5])
+            self.tPortfolioCount = len(self.tPortfolio)
 
             # ------------
             # Получение массива иконок

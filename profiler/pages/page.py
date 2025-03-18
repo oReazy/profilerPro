@@ -21,6 +21,7 @@ from profiler.states.localStorage import Storage as LS
 
 import profiler.components.header as header
 import profiler.components.editName as editName
+import profiler.components.portfolio as portfolio
 from profiler.states.page import State as State
 
 # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -103,22 +104,365 @@ def index():
                                             ),
                                             ),
                                         ),
-                                    rx.flex(
-                                        rx.card(
-                                            width='282px'
+                                    rx.cond(
+                                        State.tVision[1] == True,
+                                        rx.cond(
+                                            State.tPortfolioCount == 1,
+                                            rx.flex(
+                                                rx.link(
+                                                    rx.card(
+                                                        rx.inset(
+                                                            rx.image(
+                                                                src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
+                                                                width="100%",
+                                                                height="120px",
+                                                                style=LS.style2
+                                                            ),
+                                                            side="top",
+                                                            decoding='cover',
+                                                            pb="current",
+                                                        ),
+                                                        rx.flex(
+                                                            rx.flex(
+                                                                rx.text(State.tPortfolio[0][1], font_family='SFProDisplayBold'),
+                                                                rx.text(State.tPortfolio[0][2], font_family='SFProDisplayMedium', size='2', color_scheme='gray'),
+                                                                direction='column',
+                                                            ),
+                                                            rx.flex(
+                                                                rx.icon('square-arrow-out-up-right', color=rx.color(State.tPortfolioColors[0], 9))
+                                                            ),
+                                                            direction='row',
+                                                            align='center',
+                                                            justify='between'
+                                                        ),
+                                                        width='294.6px'
+                                                    ),
+                                                    on_mouse_enter=State.onMousePortfolio(0),
+                                                    on_mouse_leave=State.unMousePortfolio(0),
+                                                    on_click=State.unMousePortfolio(0),
+                                                    href=State.tPortfolio[0][3],
+                                                    style=LS.hover,
+                                                    is_external=True
+                                                ),
+                                                margin_top='8px',
+                                                direction='row',
+                                                spacing='2'
+                                            ),
                                         ),
-                                        rx.card(
-                                            width='282px'
+                                    ),
+                                    rx.cond(
+                                        State.tVision[1] == True,
+                                        rx.cond(
+                                            State.tPortfolioCount == 2,
+                                            rx.flex(
+                                                rx.link(
+                                                    rx.card(
+                                                        rx.inset(
+                                                            rx.image(
+                                                                src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
+                                                                width="100%",
+                                                                height="120px",
+                                                                style=LS.style2
+                                                            ),
+                                                            side="top",
+                                                            decoding='cover',
+                                                            pb="current",
+                                                        ),
+                                                        rx.flex(
+                                                            rx.flex(
+                                                                rx.text(State.tPortfolio[0][1], font_family='SFProDisplayBold'),
+                                                                rx.text(State.tPortfolio[0][2], font_family='SFProDisplayMedium', size='2', color_scheme='gray'),
+                                                                direction='column',
+                                                            ),
+                                                            rx.flex(
+                                                                rx.icon('square-arrow-out-up-right', color=rx.color(State.tPortfolioColors[0], 9))
+                                                            ),
+                                                            direction='row',
+                                                            align='center',
+                                                            justify='between'
+                                                        ),
+                                                        width='294.6px'
+                                                    ),
+                                                    on_mouse_enter=State.onMousePortfolio(0),
+                                                    on_mouse_leave=State.unMousePortfolio(0),
+                                                    on_click=State.unMousePortfolio(0),
+                                                    href=State.tPortfolio[0][3],
+                                                    style=LS.hover,
+                                                    is_external=True
+                                                ),
+                                                rx.link(
+                                                    rx.card(
+                                                        rx.inset(
+                                                            rx.image(
+                                                                src=rx.get_upload_url(f'{State.tPortfolio[1][4]}'),
+                                                                width="100%",
+                                                                height="120px",
+                                                                style=LS.style2
+                                                            ),
+                                                            side="top",
+                                                            decoding='cover',
+                                                            pb="current",
+                                                        ),
+                                                        rx.flex(
+                                                            rx.flex(
+                                                                rx.text(State.tPortfolio[1][1], font_family='SFProDisplayBold'),
+                                                                rx.text(State.tPortfolio[1][2], font_family='SFProDisplayMedium', size='2', color_scheme='gray'),
+                                                                direction='column',
+                                                            ),
+                                                            rx.flex(
+                                                                rx.icon('square-arrow-out-up-right', color=rx.color(State.tPortfolioColors[1], 9))
+                                                            ),
+                                                            direction='row',
+                                                            align='center',
+                                                            justify='between'
+                                                        ),
+                                                        width='294.6px'
+                                                    ),
+                                                    on_mouse_enter=State.onMousePortfolio(1),
+                                                    on_mouse_leave=State.unMousePortfolio(1),
+                                                    on_click=State.unMousePortfolio(0),
+                                                    href=State.tPortfolio[1][3],
+                                                    style=LS.hover,
+                                                    is_external=True
+                                                ),
+                                                margin_top='8px',
+                                                direction='row',
+                                                spacing='2'
+                                            ),
                                         ),
-                                        rx.card(
-                                            width='282px'
+                                    ),
+                                    rx.cond(
+                                        State.tVision[1] == True,
+                                        rx.cond(
+                                            State.tPortfolioCount == 3,
+                                            rx.flex(
+                                                rx.link(
+                                                    rx.card(
+                                                        rx.inset(
+                                                            rx.image(
+                                                                src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
+                                                                width="100%",
+                                                                height="120px",
+                                                                style=LS.style2
+                                                            ),
+                                                            side="top",
+                                                            decoding='cover',
+                                                            pb="current",
+                                                        ),
+                                                        rx.flex(
+                                                            rx.flex(
+                                                                rx.text(State.tPortfolio[0][1], font_family='SFProDisplayBold'),
+                                                                rx.text(State.tPortfolio[0][2], font_family='SFProDisplayMedium', size='2', color_scheme='gray'),
+                                                                direction='column',
+                                                            ),
+                                                            rx.flex(
+                                                                rx.icon('square-arrow-out-up-right', color=rx.color(State.tPortfolioColors[0], 9))
+                                                            ),
+                                                            direction='row',
+                                                            align='center',
+                                                            justify='between'
+                                                        ),
+                                                        width='294.6px'
+                                                    ),
+                                                    on_mouse_enter=State.onMousePortfolio(0),
+                                                    on_mouse_leave=State.unMousePortfolio(0),
+                                                    on_click=State.unMousePortfolio(0),
+                                                    href=State.tPortfolio[0][3],
+                                                    style=LS.hover,
+                                                    is_external=True
+                                                ),
+                                                rx.link(
+                                                    rx.card(
+                                                        rx.inset(
+                                                            rx.image(
+                                                                src=rx.get_upload_url(f'{State.tPortfolio[1][4]}'),
+                                                                width="100%",
+                                                                height="120px",
+                                                                style=LS.style2
+                                                            ),
+                                                            side="top",
+                                                            decoding='cover',
+                                                            pb="current",
+                                                        ),
+                                                        rx.flex(
+                                                            rx.flex(
+                                                                rx.text(State.tPortfolio[1][1], font_family='SFProDisplayBold'),
+                                                                rx.text(State.tPortfolio[1][2], font_family='SFProDisplayMedium', size='2', color_scheme='gray'),
+                                                                direction='column',
+                                                            ),
+                                                            rx.flex(
+                                                                rx.icon('square-arrow-out-up-right', color=rx.color(State.tPortfolioColors[1], 9))
+                                                            ),
+                                                            direction='row',
+                                                            align='center',
+                                                            justify='between'
+                                                        ),
+                                                        width='294.6px'
+                                                    ),
+                                                    on_mouse_enter=State.onMousePortfolio(1),
+                                                    on_mouse_leave=State.unMousePortfolio(1),
+                                                    on_click=State.unMousePortfolio(1),
+                                                    href=State.tPortfolio[1][3],
+                                                    style=LS.hover,
+                                                    is_external=True
+                                                ),
+                                                rx.link(
+                                                    rx.card(
+                                                        rx.inset(
+                                                            rx.image(
+                                                                src=rx.get_upload_url(f'{State.tPortfolio[2][4]}'),
+                                                                width="100%",
+                                                                height="120px",
+                                                                style=LS.style2
+                                                            ),
+                                                            side="top",
+                                                            decoding='cover',
+                                                            pb="current",
+                                                        ),
+                                                        rx.flex(
+                                                            rx.flex(
+                                                                rx.text(State.tPortfolio[2][1], font_family='SFProDisplayBold'),
+                                                                rx.text(State.tPortfolio[2][2], font_family='SFProDisplayMedium', size='2', color_scheme='gray'),
+                                                                direction='column',
+                                                            ),
+                                                            rx.flex(
+                                                                rx.icon('square-arrow-out-up-right', color=rx.color(State.tPortfolioColors[2], 9))
+                                                            ),
+                                                            direction='row',
+                                                            align='center',
+                                                            justify='between'
+                                                        ),
+                                                        width='294.6px'
+                                                    ),
+                                                    on_mouse_enter=State.onMousePortfolio(2),
+                                                    on_mouse_leave=State.unMousePortfolio(2),
+                                                    on_click=State.unMousePortfolio(2),
+                                                    href=State.tPortfolio[2][3],
+                                                    style=LS.hover,
+                                                    is_external=True
+                                                ),
+                                                margin_top='8px',
+                                                direction='row',
+                                                spacing='2'
+                                            ),
                                         ),
-                                        rx.card(
-                                            width='30px',
+                                    ),
+                                    rx.cond(
+                                        State.tVision[1] == True,
+                                        rx.cond(
+                                            State.tPortfolioCount > 3,
+                                            rx.flex(
+                                                rx.link(
+                                                    rx.card(
+                                                        rx.inset(
+                                                            rx.image(
+                                                                src=rx.get_upload_url(f'{State.tPortfolio[0][4]}'),
+                                                                width="100%",
+                                                                height="120px",
+                                                                style=LS.style2
+                                                            ),
+                                                            side="top",
+                                                            decoding='cover',
+                                                            pb="current",
+                                                        ),
+                                                        rx.flex(
+                                                            rx.flex(
+                                                                rx.text(State.tPortfolio[0][1], font_family='SFProDisplayBold'),
+                                                                rx.text(State.tPortfolio[0][2], font_family='SFProDisplayMedium', size='2', color_scheme='gray'),
+                                                                direction='column',
+                                                            ),
+                                                            rx.flex(
+                                                                rx.icon('square-arrow-out-up-right', color=rx.color(State.tPortfolioColors[0], 9))
+                                                            ),
+                                                            direction='row',
+                                                            align='center',
+                                                            justify='between'
+                                                        ),
+                                                        width='278px'
+                                                    ),
+                                                    on_mouse_enter=State.onMousePortfolio(0),
+                                                    on_mouse_leave=State.unMousePortfolio(0),
+                                                    on_click=State.unMousePortfolio(0),
+                                                    href=State.tPortfolio[0][3],
+                                                    style=LS.hover,
+                                                    is_external=True
+                                                ),
+                                                rx.link(
+                                                    rx.card(
+                                                        rx.inset(
+                                                            rx.image(
+                                                                src=rx.get_upload_url(f'{State.tPortfolio[1][4]}'),
+                                                                width="100%",
+                                                                height="120px",
+                                                                style=LS.style2
+                                                            ),
+                                                            side="top",
+                                                            decoding='cover',
+                                                            pb="current",
+                                                        ),
+                                                        rx.flex(
+                                                            rx.flex(
+                                                                rx.text(State.tPortfolio[1][1], font_family='SFProDisplayBold'),
+                                                                rx.text(State.tPortfolio[1][2], font_family='SFProDisplayMedium', size='2', color_scheme='gray'),
+                                                                direction='column',
+                                                            ),
+                                                            rx.flex(
+                                                                rx.icon('square-arrow-out-up-right', color=rx.color(State.tPortfolioColors[1], 9))
+                                                            ),
+                                                            direction='row',
+                                                            align='center',
+                                                            justify='between'
+                                                        ),
+                                                        width='278px'
+                                                    ),
+                                                    on_mouse_enter=State.onMousePortfolio(1),
+                                                    on_mouse_leave=State.unMousePortfolio(1),
+                                                    on_click=State.unMousePortfolio(1),
+                                                    href=State.tPortfolio[1][3],
+                                                    style=LS.hover,
+                                                    is_external=True
+                                                ),
+                                                rx.link(
+                                                    rx.card(
+                                                        rx.inset(
+                                                            rx.image(
+                                                                src=rx.get_upload_url(f'{State.tPortfolio[2][4]}'),
+                                                                width="100%",
+                                                                height="120px",
+                                                                style=LS.style2
+                                                            ),
+                                                            side="top",
+                                                            decoding='cover',
+                                                            pb="current",
+                                                        ),
+                                                        rx.flex(
+                                                            rx.flex(
+                                                                rx.text(State.tPortfolio[2][1], font_family='SFProDisplayBold'),
+                                                                rx.text(State.tPortfolio[2][2], font_family='SFProDisplayMedium', size='2', color_scheme='gray'),
+                                                                direction='column',
+                                                            ),
+                                                            rx.flex(
+                                                                rx.icon('square-arrow-out-up-right', color=rx.color(State.tPortfolioColors[2], 9))
+                                                            ),
+                                                            direction='row',
+                                                            align='center',
+                                                            justify='between'
+                                                        ),
+                                                        width='278px'
+                                                    ),
+                                                    on_mouse_enter=State.onMousePortfolio(2),
+                                                    on_mouse_leave=State.unMousePortfolio(2),
+                                                    on_click=State.unMousePortfolio(2),
+                                                    href=State.tPortfolio[2][3],
+                                                    style=LS.hover,
+                                                    is_external=True
+                                                ),
+                                                portfolio.index(),
+                                                margin_top='8px',
+                                                direction='row',
+                                                spacing='2',
+                                            ),
                                         ),
-                                        margin_top='8px',
-                                        direction='row',
-                                        spacing='2'
                                     ),
                                     value="tab1",
                                     width='900px',
