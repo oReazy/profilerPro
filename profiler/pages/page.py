@@ -545,6 +545,49 @@ def index():
                                             ),
                                         ),
                                     ),
+                                    rx.cond(
+                                        State.tVision[3] == True,
+                                        rx.flex(
+                                            rx.foreach(State.tLinks, lambda item:
+                                                       rx.link(
+                                                           rx.card(
+                                                               rx.flex(
+                                                                   rx.match(
+                                                                       item[4],
+                                                                       ("Ссылка", rx.icon("square-arrow-out-up-right")),
+                                                                       ("Сообщение", rx.icon("message-circle")),
+                                                                       ("Бот", rx.icon("bot")),
+                                                                       ("Наушники", rx.icon("headphones")),
+                                                                       ("Диск", rx.icon("disc")),
+                                                                       ("Картинка", rx.icon("image")),
+                                                                       ("Twitch", rx.icon("twitch")),
+                                                                       ("YouTube", rx.icon("youtube")),
+                                                                       ("Instagram", rx.icon("instagram")),
+                                                                       ("Dribbble", rx.icon("dribbble")),
+                                                                       ("Github", rx.icon("github")),
+                                                                       ("Стрелка вправо", rx.icon("circle-arrow-right")),
+                                                                   ),
+                                                                   rx.flex(
+                                                                       rx.text(item[1], font_family='SFProDisplayBold'),
+                                                                       rx.text(item[2], font_family='SFProDisplayMedium', size='2', color_scheme='gray'),
+                                                                       direction='column'
+                                                                   ),
+                                                                   align='center',
+                                                                   direction='row',
+                                                                   spacing='3'
+                                                               ),
+                                                           ),
+                                                           is_external=True,
+                                                           style=LS.hover,
+                                                           href=item[3],
+                                                       ),
+                                                       ),
+                                            direction='column',
+                                            spacing='2',
+                                            margin_top='8px'
+                                        ),
+
+                                    ),
                                     value="tab1",
                                     width='900px',
                                     margin_left='117px',

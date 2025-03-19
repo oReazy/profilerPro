@@ -28,6 +28,7 @@ class State(LS):
     # --------------------------------------------------------
 
     tPortfolioColors = ['black', 'black', 'black', 'black', 'black']
+    tLinksColors = []
 
     # --------------------------------------------------------
 
@@ -90,6 +91,9 @@ class State(LS):
             self.tVision = ast.literal_eval(PAGE[17])
             self.tPortfolio = ast.literal_eval(PAGE[5])
             self.tPortfolioCount = len(self.tPortfolio)
+            self.tPortfolioColors = ['black', 'black', 'black', 'black', 'black']
+            self.tLinks = ast.literal_eval(PAGE[7])
+            self.tLinksCount = len(self.tLinks)
 
             # ------------
             # Получение массива иконок
