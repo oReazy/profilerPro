@@ -21,6 +21,7 @@ from profiler.states.localStorage import Storage as LS
 
 import profiler.components.header as header
 import profiler.components.newPortfolioItem as newPortfolioItem
+import profiler.components.newLinkItem as newLinkItem
 import profiler.components.editName as editName
 from profiler.states.edit import State as State
 
@@ -344,7 +345,7 @@ def index():
                                                     rx.flex(
                                                         rx.cond(
                                                             State.tVision4,
-                                                            newPortfolioItem.index(),
+                                                            newLinkItem.index(),
                                                             rx.button('Добавить ссылку', font_family='SFProDisplayBold', size='1', disabled=True),
                                                         ),
                                                         direction='row',
@@ -365,9 +366,9 @@ def index():
                                                             rx.flex(
                                                                 rx.divider(),
                                                                 rx.flex(
-                                                                    newPortfolioItem.openItem(item),
+                                                                    newLinkItem.openItem(item),
                                                                     rx.flex(
-                                                                        rx.button(rx.icon('trash-2', size=18), color_scheme='tomato', size='1', on_click=newPortfolioItem.newPortfolioItem.delete(item)),
+                                                                        rx.button(rx.icon('trash-2', size=18), color_scheme='tomato', size='1', on_click=newLinkItem.newLinkItem.delete(item)),
                                                                         direction='row',
                                                                         spacing='2'
                                                                     ),

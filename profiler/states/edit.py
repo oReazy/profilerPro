@@ -175,6 +175,8 @@ class State(LS):
                 self.tVision5 = VISION[4]
                 self.tPortfolio = ast.literal_eval(PAGE[5])
                 self.tPortfolioCount = len(self.tPortfolio)
+                self.tLinks = ast.literal_eval(PAGE[7])
+                self.tLinksCount = len(self.tLinks)
                 if int(PAGE[12]) == 1:
                     self.tPrivate = 'Закрыта'
                 else:

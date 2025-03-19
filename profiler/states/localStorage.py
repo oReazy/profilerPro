@@ -36,7 +36,7 @@ class Storage(rx.State):
     tPortfolio: list[list[str]]
     tPortfolioCount = 0
 
-    tLinks: list[str]
+    tLinks: list[list[str]]
     tLinksCount = 0
 
     style = {"text-decoration": "none !important",  # Убираем подчёркивание
