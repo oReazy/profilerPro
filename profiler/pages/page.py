@@ -41,7 +41,7 @@ style2 = {
 
 # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
-@rx.page(route="/page/[id]/", title="«Profiler» — Профиль", on_load=[LS.onLoad, State.checkPage])
+@rx.page(route="/page/[id]/", title="«Profiler» — Профиль", on_load=[LS.onLoadLite, State.checkPage])
 def index():
     return rx.container(
         rx.cond(

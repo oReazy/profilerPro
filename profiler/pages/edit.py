@@ -68,6 +68,7 @@ def index():
                             rx.tabs.root(
                                 rx.tabs.list(
                                     rx.tabs.trigger("Главная", value="tab1", font_family='SFProDisplayBold'),
+                                    rx.tabs.trigger("Настройки", value="tab2", font_family='SFProDisplayBold'),
                                     margin_top='-52px',
                                     margin_left='278px',
                                     width='740px'
@@ -75,6 +76,21 @@ def index():
                                 rx.tabs.content(
                                     rx.flex(
                                         rx.card(
+                                            rx.flex(
+                                                rx.text('Название страницы', font_family='SFProDisplayBold', color_scheme='gray', size='2'),
+                                                rx.input(
+                                                    rx.input.slot(
+                                                        rx.icon('user', size=17, color=rx.color('gray', 9))
+                                                    ),
+                                                    value=State.tNamePage,
+                                                    on_change=[State.set_tNamePage],
+                                                    font_family='SFProDisplayBold',
+                                                    placeholder='Видно только вам',
+                                                ),
+                                                direction='column',
+                                                spacing='1',
+                                                margin_bottom='8px'
+                                            ),
                                             rx.flex(
                                                 rx.flex(
                                                     rx.text('Имя', font_family='SFProDisplayBold', color_scheme='gray', size='2'),
@@ -114,7 +130,7 @@ def index():
                                                     on_change=[State.set_tAbout],
                                                     font_family='SFProDisplayBold',
                                                     placeholder='Расскажите о себе',
-                                                    height='125px'
+                                                    height='65px'
                                                 ),
                                                 direction='column',
                                                 margin_top='12px',
@@ -397,9 +413,75 @@ def index():
                                     value="tab1",
                                     margin_left='117px',
                                 ),
+
+                                rx.tabs.content(
+                                    rx.card(
+                                        rx.flex(
+                                            rx.text('ОСНОВНЫЕ НАСТРОЙКИ', font_family='SFMonoBold', size='2', color_scheme='gray', margin_bottom='8px'),
+                                            rx.flex(
+                                                rx.flex(
+                                                    rx.image('/images/pages/trash.png', width='26px'),
+                                                    rx.text('Удаление страницы', font_family='SFProDisplayMedium', size='2'),
+                                                    direction='row',
+                                                    spacing='2',
+                                                    align='center',
+                                                ),
+                                                rx.dialog.root(
+                                                    rx.dialog.trigger(rx.button('Удалить', font_family='SFProDisplayBold', color_scheme='tomato', size='1')),
+                                                    rx.dialog.content(
+                                                        rx.flex(
+                                                            rx.flex(
+                                                                rx.flex(
+                                                                    rx.image('/icons/icons8-remove.svg', width='25px'),
+                                                                    rx.flex(
+                                                                        rx.text('Удаление страницы', font_family='SFProDisplayBold', size='3'),
+                                                                        rx.text('Вы уверены, что желаете удалить страницу?', font_family='SFProDisplayMedium', size='2'),
+                                                                        direction='column'
+                                                                    ),
+                                                                    spacing='2',
+                                                                    direction='row',
+                                                                    align='center'
+                                                                ),
+                                                                rx.flex(
+                                                                    rx.badge('Esc', color_scheme='gray', variant="soft", font_family='SFProDisplayBold'),
+                                                                    spacing='2',
+                                                                    direction='row',
+                                                                    align='center'
+                                                                ),
+                                                                spacing='2',
+                                                                direction='row',
+                                                                align='center',
+                                                                justify='between'
+                                                            ),
+                                                            rx.divider(margin_top='12px'),
+                                                            rx.flex(
+                                                                rx.dialog.close(rx.button('Отмена', font_family='SFProDisplayBold', variant='surface', size='2')),
+                                                                rx.button('Удалить страницу', font_family='SFProDisplayBold', color_scheme='tomato', size='2', on_click=State.deletePage),
+                                                                direction='row',
+                                                                justify='end',
+                                                                spacing='2'
+                                                            ),
+                                                            direction='column',
+                                                            spacing='2'
+                                                        ),
+                                                    ),
+                                                ),
+                                                align='center',
+                                                direction='row',
+                                                justify='between'
+                                            ),
+                                            direction='column',
+                                            spacing='2'
+                                        ),
+                                        width='500px'
+                                    ),
+                                    value="tab2",
+                                    margin_left='117px',
+                                    margin_top='12px'
+                                ),
                                 rx.tabs.content(
                                     rx.text("item on tab 2", font_family='SFProDisplayBold'),
-                                    value="tab2",
+                                    value="tab3",
                                     margin_left='117px',
                                 ),
                                 default_value="tab1",

@@ -311,7 +311,7 @@ def openItem(item):
                 rx.flex(
                     rx.flex(
                         rx.image('/icons/icons8-choose_page.svg', width='25px'),
-                        rx.text('Добавить ссылку', font_family='SFProDisplayBold', size='3'),
+                        rx.text('Изменить ссылку', font_family='SFProDisplayBold', size='3'),
                         spacing='2',
                         direction='row',
                         align='center'

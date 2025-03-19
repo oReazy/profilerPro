@@ -18,6 +18,7 @@ class State(LS):
     tErrorVisible = False
     tErrorText = ''
 
+    tNamePage = ''
     tName = ''
     tSurname = ''
     tAbout = ''
@@ -131,6 +132,11 @@ class State(LS):
         if self.tImages[1] == '/images/pages/wallpaper.png':
             self.tImages[1] = '/images/pages/wallpaper_alt.png'
 
+    async def deletePage(self):
+        args = self.router.page.params['id']
+        await database.deleteData('pages', 'id', f"'{args}'")
+        return [rx.redirect('/mypages')]
+
     async def save(self):
         args = self.router.page.params['id']
         vision = [self.tVision1, self.tVision2, self.tVision3, self.tVision4, self.tVision5]
@@ -139,7 +145,7 @@ class State(LS):
             private = 0
         else:
             private = 1;
-        await database.setDataMulti('pages', 'id', f"'{args}'", f"name = '{self.tName}', surname = '{self.tSurname}', description = '{self.tAbout}', vision = \"{vision}\", private = '{private}'")
+        await database.setDataMulti('pages', 'id', f"'{args}'", f"name = '{self.tName}', surname = '{self.tSurname}', description = '{self.tAbout}', vision = \"{vision}\", private = '{private}', namePage = '{self.tNamePage}'")
         countUrls = await database.getDataMultiCount('pages', 'url', f"'{self.tUrl}'")
         if countUrls == 0:
             await database.setData('pages', 'id', f"'{args}'", 'url', f"'{self.tUrl}'")
@@ -163,6 +169,7 @@ class State(LS):
                 self.tErrorText = ''
                 self.tPage = PAGE
                 self.tImages = ast.literal_eval(PAGE[10])
+                self.tNamePage = PAGE[16]
                 self.tName = PAGE[1]
                 self.tSurname = PAGE[2]
                 self.tAbout = PAGE[4]
