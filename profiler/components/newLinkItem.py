@@ -83,6 +83,7 @@ class newLinkItem(LS):
         PAGE = await database.getData('pages', 'id', f'"{args}"')
         links = ast.literal_eval(PAGE[7])
         self.tLinks = list(links)
+        self.tLinksCount = len(self.tLinks)
 
     async def createItem(self):
         args = self.router.page.params['id']
@@ -95,6 +96,7 @@ class newLinkItem(LS):
         PAGE = await database.getData('pages', 'id', f'"{args}"')
         links = ast.literal_eval(PAGE[7])
         self.tLinks = list(links)
+        self.tLinksCount = len(self.tLinks)
 
 
 
