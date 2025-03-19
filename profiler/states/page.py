@@ -27,8 +27,6 @@ class State(LS):
 
     # --------------------------------------------------------
 
-    tPortfolio: list[list[str]]
-    tPortfolioCount = 0
     tPortfolioColors = ['black', 'black', 'black', 'black', 'black']
 
     # --------------------------------------------------------

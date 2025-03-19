@@ -28,8 +28,6 @@ class State(LS):
     tVision4 = False
     tVision5 = False
     tPrivate = ''
-    tPortfolio: list[list[str]]
-    tPortfolioCount = 0
 
     @rx.event
     async def handle_upload_wallpaper(self, files: list[rx.UploadFile]):

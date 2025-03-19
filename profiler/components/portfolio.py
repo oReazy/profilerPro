@@ -15,9 +15,7 @@ from profiler.states.localStorage import Storage as LS
 class State(LS):
     # --------------------------------------------------------
 
-    tPortfolio: list[list[str]]
     tPortfolioMassive: list[list[list[str]]]
-    tPortfolioCount = 0
     iconColor = 'black'
 
     # --------------------------------------------------------

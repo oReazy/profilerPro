@@ -286,11 +286,11 @@ def index():
                                                     align='center'
                                                 ),
                                                 rx.cond(
-                                                    State.tPortfolioCount != 0,
+                                                    LS.tPortfolioCount != 0,
                                                     rx.cond(
                                                         State.tVision2,
                                                         rx.foreach(
-                                                            State.tPortfolio, lambda item:
+                                                            LS.tPortfolio, lambda item:
                                                             rx.flex(
                                                                 rx.divider(),
                                                                 rx.flex(

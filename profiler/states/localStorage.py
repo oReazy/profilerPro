@@ -33,6 +33,9 @@ class Storage(rx.State):
     USER = () # Хранение данных об игроке
     SERVER = () # Хранение данных об сервере
 
+    tPortfolio: list[list[str]]
+    tPortfolioCount = 0
+
     style = {"text-decoration": "none !important",  # Убираем подчёркивание
              "color": "inherit !important",  # Цвет наследуется от родителя
              "cursor": "hover",  # Убираем указатель на ссылке

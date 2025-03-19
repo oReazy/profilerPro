@@ -441,7 +441,7 @@ def index():
                                                             align='center',
                                                             justify='between'
                                                         ),
-                                                        width='278px'
+                                                        width='276px'
                                                     ),
                                                     on_mouse_enter=State.onMousePortfolio(0),
                                                     on_mouse_leave=State.unMousePortfolio(0),
@@ -485,7 +485,7 @@ def index():
                                                             align='center',
                                                             justify='between'
                                                         ),
-                                                        width='278px'
+                                                        width='276px'
                                                     ),
                                                     on_mouse_enter=State.onMousePortfolio(1),
                                                     on_mouse_leave=State.unMousePortfolio(1),
@@ -529,7 +529,7 @@ def index():
                                                             align='center',
                                                             justify='between'
                                                         ),
-                                                        width='278px'
+                                                        width='276px'
                                                     ),
                                                     on_mouse_enter=State.onMousePortfolio(2),
                                                     on_mouse_leave=State.unMousePortfolio(2),

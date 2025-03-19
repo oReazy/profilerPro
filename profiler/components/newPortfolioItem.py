@@ -39,7 +39,10 @@ class newPortfolioItem(LS):
         index = tPortfolio.index(item)
         tPortfolio.pop(index)
         await database.setData('pages', 'id', f"'{args}'", 'portfolio', f'\"{tPortfolio}\"')
-        return rx.redirect(f'/page/edit/{args}')
+        args = self.router.page.params['id']
+        PAGE = await database.getData('pages', 'id', f'"{args}"')
+        tPortfolio = ast.literal_eval(PAGE[5])
+        self.tPortfolio = list(tPortfolio)
 
 
     async def onStart(self):
@@ -76,7 +79,10 @@ class newPortfolioItem(LS):
         tPortfolio = list(tPortfolio)
         tPortfolio[self.tIndex] = [self.tName, self.tTitle, self.tDescription, self.tLink, self.tImage]
         await database.setData('pages', 'id', f"'{args}'", 'portfolio', f'\"{tPortfolio}\"')
-        return rx.redirect(f'/page/edit/{args}')
+        args = self.router.page.params['id']
+        PAGE = await database.getData('pages', 'id', f'"{args}"')
+        tPortfolio = ast.literal_eval(PAGE[5])
+        self.tPortfolio = list(tPortfolio)
 
     async def createItem(self):
         args = self.router.page.params['id']
@@ -85,7 +91,10 @@ class newPortfolioItem(LS):
         tPortfolio = list(tPortfolio)
         tPortfolio.append([self.tName, self.tTitle, self.tDescription, self.tLink, self.tImage])
         await database.setData('pages', 'id', f"'{args}'", 'portfolio', f'\"{tPortfolio}\"')
-        return rx.redirect(f'/page/edit/{args}')
+        args = self.router.page.params['id']
+        PAGE = await database.getData('pages', 'id', f'"{args}"')
+        tPortfolio = ast.literal_eval(PAGE[5])
+        self.tPortfolio = list(tPortfolio)
 
 
 
@@ -370,7 +379,7 @@ def openItem(item):
                     rx.flex(),
                     rx.flex(
                         rx.button('Очистить данные', variant='surface', color_scheme='blue', on_click=newPortfolioItem.onStart),
-                        rx.button('Изменить', disabled=newPortfolioItem.tButtonDisable, on_click=newPortfolioItem.editItem),
+                        rx.dialog.close(rx.button('Изменить', disabled=newPortfolioItem.tButtonDisable, on_click=newPortfolioItem.editItem)),
                         direction='row',
                         align='center',
                         spacing='2'
