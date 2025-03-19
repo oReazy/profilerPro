@@ -322,6 +322,77 @@ def index():
                                         width='900px',
                                         margin_top='8px'
                                     ),
+                                    rx.flex(
+                                        rx.card(
+                                            rx.flex(
+                                                rx.flex(
+                                                    rx.flex(
+                                                        rx.cond(
+                                                            State.tVision4,
+                                                            rx.image('/images/pages/links.png', width='26px'),
+                                                            rx.image('/images/pages/links_alt.png', width='26px'),
+                                                        ),
+                                                        rx.cond(
+                                                            State.tVision4,
+                                                            rx.text('Ссылки', font_family='SFProDisplayBold', size='2'),
+                                                            rx.text('Ссылки (скрыто)', font_family='SFProDisplayBold', size='2', color_scheme='gray'),
+                                                        ),
+                                                        align='center',
+                                                        spacing='2',
+                                                        direction='row'
+                                                    ),
+                                                    rx.flex(
+                                                        rx.cond(
+                                                            State.tVision4,
+                                                            newPortfolioItem.index(),
+                                                            rx.button('Добавить ссылку', font_family='SFProDisplayBold', size='1', disabled=True),
+                                                        ),
+                                                        direction='row',
+                                                        align='center',
+                                                        spacing='2'
+                                                    ),
+                                                    direction='row',
+                                                    spacing='2',
+                                                    justify='between',
+                                                    align='center'
+                                                ),
+                                                rx.cond(
+                                                    LS.tLinksCount != 0,
+                                                    rx.cond(
+                                                        State.tVision4,
+                                                        rx.foreach(
+                                                            LS.tLinks, lambda item:
+                                                            rx.flex(
+                                                                rx.divider(),
+                                                                rx.flex(
+                                                                    newPortfolioItem.openItem(item),
+                                                                    rx.flex(
+                                                                        rx.button(rx.icon('trash-2', size=18), color_scheme='tomato', size='1', on_click=newPortfolioItem.newPortfolioItem.delete(item)),
+                                                                        direction='row',
+                                                                        spacing='2'
+                                                                    ),
+                                                                    spacing='2',
+                                                                    direction='row',
+                                                                    align='center',
+                                                                    justify='between'
+                                                                ),
+                                                                direction='column',
+                                                                spacing='2'
+                                                            )
+                                                        ),
+                                                    ),
+                                                ),
+                                                width='100%',
+                                                direction='column',
+                                                spacing='2',
+                                            ),
+                                            width='100%'
+                                        ),
+                                        spacing='2',
+                                        align='start',
+                                        width='900px',
+                                        margin_top='8px'
+                                    ),
                                     value="tab1",
                                     margin_left='117px',
                                 ),

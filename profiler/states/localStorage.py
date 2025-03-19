@@ -36,6 +36,9 @@ class Storage(rx.State):
     tPortfolio: list[list[str]]
     tPortfolioCount = 0
 
+    tLinks: list[str]
+    tLinksCount = 0
+
     style = {"text-decoration": "none !important",  # Убираем подчёркивание
              "color": "inherit !important",  # Цвет наследуется от родителя
              "cursor": "hover",  # Убираем указатель на ссылке
