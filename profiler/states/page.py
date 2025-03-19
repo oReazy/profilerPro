@@ -18,6 +18,7 @@ class State(LS):
     tErrorVisible = False
     tErrorText = ''
     tIcons: list[str]
+    tIDAuthor = 0
 
     tName = ''
     tSurname = ''
@@ -60,6 +61,9 @@ class State(LS):
             self.tPortfolio = ast.literal_eval(PAGE[5])
             self.tPortfolioCount = len(self.tPortfolio)
             self.tPortfolioColors = ['black', 'black', 'black', 'black', 'black']
+            self.tLinks = ast.literal_eval(PAGE[7])
+            self.tLinksCount = len(self.tLinks)
+            self.tIDAuthor = PAGE[14]
 
             if self.tPrivate == 1:
                 self.tErrorVisible = True
@@ -94,6 +98,7 @@ class State(LS):
             self.tPortfolioColors = ['black', 'black', 'black', 'black', 'black']
             self.tLinks = ast.literal_eval(PAGE[7])
             self.tLinksCount = len(self.tLinks)
+            self.tIDAuthor = PAGE[14]
 
             # ------------
             # Получение массива иконок

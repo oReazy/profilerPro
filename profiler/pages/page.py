@@ -50,6 +50,10 @@ def index():
                 rx.cond(
                     State.tErrorVisible == False,
                     rx.flex(
+                        rx.cond(
+                            State.tIDAuthor == State.USER[0],
+                            header.index()
+                        ),
                         rx.flex(
                             rx.cond(
                                 (State.tImages[1] == '/images/pages/wallpaper.png') | (State.tImages[1] == '/images/pages/wallpaper_alt.png'),
