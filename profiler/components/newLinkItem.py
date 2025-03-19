@@ -101,7 +101,7 @@ class newLinkItem(LS):
 
 
     async def checkForm(self):
-        if self.tName != '' and self.tTitle != '' and self.tDescription != '' and self.tLink != '':
+        if self.tName != '' and self.tTitle != '' and self.tLink != '':
             self.tButtonDisable = False
         else:
             self.tButtonDisable = True
