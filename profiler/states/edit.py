@@ -152,7 +152,7 @@ class State(LS):
         else:
             page_info = await database.getData('pages', 'url', f"'{self.tUrl}'")
             if int(page_info[0]) == int(args):
-                pass
+                return rx.toast.info("Сохранено")
             else:
                 if self.tUrl == '':
                     await database.setData('pages', 'id', f"'{args}'", 'url', f"''")

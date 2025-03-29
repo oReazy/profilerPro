@@ -5,7 +5,6 @@
 Главная страница проекта
 
 """
-from idlelib.configdialog import font_sample_text
 
 # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
@@ -77,21 +76,6 @@ def index():
                                     rx.flex(
                                         rx.card(
                                             rx.flex(
-                                                rx.text('Название страницы', font_family='SFProDisplayBold', color_scheme='gray', size='2'),
-                                                rx.input(
-                                                    rx.input.slot(
-                                                        rx.icon('user', size=17, color=rx.color('gray', 9))
-                                                    ),
-                                                    value=State.tNamePage,
-                                                    on_change=[State.set_tNamePage],
-                                                    font_family='SFProDisplayBold',
-                                                    placeholder='Видно только вам',
-                                                ),
-                                                direction='column',
-                                                spacing='1',
-                                                margin_bottom='8px'
-                                            ),
-                                            rx.flex(
                                                 rx.flex(
                                                     rx.text('Имя', font_family='SFProDisplayBold', color_scheme='gray', size='2'),
                                                     rx.input(
@@ -130,7 +114,7 @@ def index():
                                                     on_change=[State.set_tAbout],
                                                     font_family='SFProDisplayBold',
                                                     placeholder='Расскажите о себе',
-                                                    height='65px'
+                                                    height='127px'
                                                 ),
                                                 direction='column',
                                                 margin_top='12px',
@@ -193,13 +177,13 @@ def index():
                                                 rx.divider(),
                                                 rx.flex(
                                                     rx.flex(
-                                                        rx.image('/images/pages/companys.png', width='26px'),
-                                                        rx.text('Показывать блок "Опыт работы"', font_family='SFProDisplayMedium', size='2'),
+                                                        rx.image('/images/pages/companys_alt.png', width='26px'),
+                                                        rx.text('Показывать блок "Опыт работы"', font_family='SFProDisplayMedium', size='2', color_scheme='gray'),
                                                         direction='row',
                                                         spacing='2',
                                                         align='center',
                                                     ),
-                                                    rx.switch(default_checked=State.tVision3, on_change=State.set_tVision3),
+                                                    rx.switch(default_checked=State.tVision3, on_change=State.set_tVision3, disabled=True),
                                                     align='center',
                                                     direction='row',
                                                     spacing='2',
@@ -415,65 +399,99 @@ def index():
                                 ),
 
                                 rx.tabs.content(
-                                    rx.card(
-                                        rx.flex(
-                                            rx.text('ОСНОВНЫЕ НАСТРОЙКИ', font_family='SFMonoBold', size='2', color_scheme='gray', margin_bottom='8px'),
+                                    rx.flex(
+                                        rx.card(
                                             rx.flex(
+                                                rx.text('ОСНОВНЫЕ НАСТРОЙКИ', font_family='SFMonoBold', size='2', color_scheme='gray', margin_bottom='8px'),
                                                 rx.flex(
-                                                    rx.image('/images/pages/trash.png', width='26px'),
-                                                    rx.text('Удаление страницы', font_family='SFProDisplayMedium', size='2'),
-                                                    direction='row',
-                                                    spacing='2',
-                                                    align='center',
+                                                    rx.text('Название страницы', font_family='SFProDisplayBold', color_scheme='gray', size='2'),
+                                                    rx.input(
+                                                        rx.input.slot(
+                                                            rx.icon('user', size=17, color=rx.color('gray', 9))
+                                                        ),
+                                                        value=State.tNamePage,
+                                                        on_change=[State.set_tNamePage],
+                                                        font_family='SFProDisplayBold',
+                                                        placeholder='Видно только вам',
+                                                    ),
+                                                    direction='column',
+                                                    spacing='1',
                                                 ),
-                                                rx.dialog.root(
-                                                    rx.dialog.trigger(rx.button('Удалить', font_family='SFProDisplayBold', color_scheme='tomato', size='1')),
-                                                    rx.dialog.content(
-                                                        rx.flex(
+                                                rx.flex(
+                                                    rx.button('Сохранить', font_family='SFProDisplayBold', on_click=State.save, size='1'),
+                                                    direction='row',
+                                                    justify='end'
+                                                ),
+                                                rx.divider(),
+                                                rx.flex(
+                                                    rx.flex(
+                                                        rx.image('/images/pages/trash.png', width='26px'),
+                                                        rx.text('Удаление страницы', font_family='SFProDisplayMedium', size='2'),
+                                                        direction='row',
+                                                        spacing='2',
+                                                        align='center',
+                                                    ),
+                                                    rx.dialog.root(
+                                                        rx.dialog.trigger(rx.button('Удалить', font_family='SFProDisplayBold', color_scheme='tomato', size='1')),
+                                                        rx.dialog.content(
                                                             rx.flex(
                                                                 rx.flex(
-                                                                    rx.image('/icons/icons8-remove.svg', width='25px'),
                                                                     rx.flex(
-                                                                        rx.text('Удаление страницы', font_family='SFProDisplayBold', size='3'),
-                                                                        rx.text('Вы уверены, что желаете удалить страницу?', font_family='SFProDisplayMedium', size='2'),
-                                                                        direction='column'
+                                                                        rx.image('/icons/icons8-remove.svg', width='25px'),
+                                                                        rx.flex(
+                                                                            rx.text('Удаление страницы', font_family='SFProDisplayBold', size='3'),
+                                                                            rx.text('Вы уверены, что желаете удалить страницу?', font_family='SFProDisplayMedium', size='2'),
+                                                                            direction='column'
+                                                                        ),
+                                                                        spacing='2',
+                                                                        direction='row',
+                                                                        align='center'
+                                                                    ),
+                                                                    rx.flex(
+                                                                        rx.badge('Esc', color_scheme='gray', variant="soft", font_family='SFProDisplayBold'),
+                                                                        spacing='2',
+                                                                        direction='row',
+                                                                        align='center'
                                                                     ),
                                                                     spacing='2',
                                                                     direction='row',
-                                                                    align='center'
+                                                                    align='center',
+                                                                    justify='between'
                                                                 ),
+                                                                rx.divider(margin_top='12px'),
                                                                 rx.flex(
-                                                                    rx.badge('Esc', color_scheme='gray', variant="soft", font_family='SFProDisplayBold'),
-                                                                    spacing='2',
+                                                                    rx.dialog.close(rx.button('Отмена', font_family='SFProDisplayBold', variant='surface', size='2')),
+                                                                    rx.button('Удалить страницу', font_family='SFProDisplayBold', color_scheme='tomato', size='2', on_click=State.deletePage),
                                                                     direction='row',
-                                                                    align='center'
+                                                                    justify='end',
+                                                                    spacing='2'
                                                                 ),
-                                                                spacing='2',
-                                                                direction='row',
-                                                                align='center',
-                                                                justify='between'
-                                                            ),
-                                                            rx.divider(margin_top='12px'),
-                                                            rx.flex(
-                                                                rx.dialog.close(rx.button('Отмена', font_family='SFProDisplayBold', variant='surface', size='2')),
-                                                                rx.button('Удалить страницу', font_family='SFProDisplayBold', color_scheme='tomato', size='2', on_click=State.deletePage),
-                                                                direction='row',
-                                                                justify='end',
+                                                                direction='column',
                                                                 spacing='2'
                                                             ),
-                                                            direction='column',
-                                                            spacing='2'
                                                         ),
                                                     ),
+                                                    align='center',
+                                                    direction='row',
+                                                    justify='between'
                                                 ),
-                                                align='center',
-                                                direction='row',
-                                                justify='between'
+                                                direction='column',
+                                                spacing='2'
                                             ),
-                                            direction='column',
-                                            spacing='2'
+                                            width='100%'
                                         ),
-                                        width='500px'
+                                        rx.card(
+                                            rx.flex(
+                                                rx.text('ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ', font_family='SFMonoBold', size='2', color_scheme='gray'),
+                                                direction='column',
+                                                spacing='2'
+                                            ),
+                                            width='100%'
+                                        ),
+                                        align='start',
+                                        width='900px',
+                                        direction='row',
+                                        spacing='2'
                                     ),
                                     value="tab2",
                                     margin_left='117px',
